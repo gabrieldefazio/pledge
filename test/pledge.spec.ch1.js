@@ -48,7 +48,7 @@ describe('The `$Promise` class', function(){
   // The only argument to a promise constructor is a function called the
   // "executor". We will circle back to this function later.
 
-  xit('can be called with a function argument (the "executor"), returning a new promise instance', function(){
+  it('can be called with a function argument (the "executor"), returning a new promise instance', function(){
     var executor = function () {};
     var promise = new $Promise(executor);
     expect( promise instanceof $Promise ).toBe( true );
@@ -56,7 +56,7 @@ describe('The `$Promise` class', function(){
 
   // This type check mimics the strictness of real ES6 Promises.
 
-  xit('throws a descriptive type error if called with no function argument', function(){
+  it('throws a descriptive type error if called with no function argument', function(){
     var nonFunctions = [null, 'bonjour', undefined, 452, {}, false];
     nonFunctions.forEach(function (nonFunction) {
       expect(callingNewPromiseWith(nonFunction)).toThrowError(

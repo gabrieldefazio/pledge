@@ -3,7 +3,9 @@
 Promises Workshop: build the pledge.js ES6-style promise library
 ----------------------------------------------------------------*/
 // YOUR CODE HERE:
-
+function $Promise(executor){
+    if(typeof executor !== 'function') throw new TypeError('/executor.+function/i');
+}
 
 
 
