@@ -7,18 +7,13 @@ function $Promise(executor) {
     if (typeof executor !== 'function') throw new TypeError('/executor.+function/i');
 
     this._state = 'pending';
-    this._value = {};
-    console.log(this)	 
-   
+    this._value = undefined;
+    this._handlerGroups = []
+
     executor(this._internalResolve.bind(this), this._internalReject.bind(this));
 }
 
 $Promise.prototype._internalResolve = function(data) {
-    // let args = [].slice.call(arguments)
-    // console.log(data);
-    // console.log('our args', args);
-    // console.log('our this from _resolve', this);
-
     if (this._state !== 'rejected' && this._state === 'pending') {
         this._value = data;
         this._state = 'fulfilled';
@@ -33,8 +28,11 @@ $Promise.prototype._internalReject = function(reason) {
     }
 };
 
-
-// let promise = new $Promise(function())
+$Promise.prototype.then = function(success, error){
+    if(typeof success === 'function' && typeof error === 'function'){
+        this._handlerGroups.push({ successCb: success, errorCb: error })
+    }else this._handlerGroups.push({ successCb: undefined, errorCb: undefined })
+};
 
 
 
