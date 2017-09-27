@@ -88,18 +88,18 @@ describe('A promise instance', function(){
   // common convention is to use a naming scheme to mark a method as "private".
   // Beginning methods with an `._underscore` is one such signal.
 
-  xit('starts with "pending" internal state', function(){
+  it('starts with "pending" internal state', function(){
     expect( promise._state ).toBe( 'pending' );
   });
 
   // NOTE — promises are NOT supposed to have public resolver and rejector
   // methods. However, hiding this implementation detail can be tricky.
 
-  xit('has an `._internalResolve` instance method', function () {
+  it('has an `._internalResolve` instance method', function () {
     expect( typeof promise._internalResolve ).toBe( 'function' );
   });
 
-  xit('has an `._internalReject` instance method', function () {
+  it('has an `._internalReject` instance method', function () {
     expect( typeof promise._internalReject ).toBe( 'function' );
     expect( promise._internalReject ).not.toBe( promise._internalResolve );
   });
