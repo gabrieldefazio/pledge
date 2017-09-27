@@ -8,6 +8,8 @@ function $Promise(executor) {
 
     this._state = 'pending';
     this._value = {};
+
+    executor(this._internalResolve, this._internalReject);
 }
 
 $Promise.prototype._internalResolve = function(data) {

@@ -224,13 +224,13 @@ describe('The executor function', function(){
     executor = jasmine.createSpy();
   });
 
-  xit('gets called when making a new $Promise', function(){
+  it('gets called when making a new $Promise', function(){
     expect( executor ).not.toHaveBeenCalled();
     var promise = new $Promise(executor); // eslint-disable-line no-unused-vars
     expect( executor ).toHaveBeenCalled();
   });
 
-  xit('gets called with two different functions (funception!), resolve and reject', function(){
+  it('gets called with two different functions (funception!), resolve and reject', function(){
     var promise = new $Promise(executor); // eslint-disable-line no-unused-vars
     var argsPassedIntoExecutor = executor.calls.argsFor(0);
 
@@ -249,7 +249,7 @@ describe('The executor function', function(){
     // like "cannot read X of undefined". Think carefully; you may have an
     // issue with *context* (the `this` keyword).
 
-    xit('resolves the promise', function(){
+    it('resolves the promise', function(){
       var promise = new $Promise(function (resolve) {
         resolve('WinGARdium leviOHsa.');
       });
