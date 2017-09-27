@@ -70,3 +70,4 @@ These and other technical details are important, but for someone just beginning 
 * [AngularJS Corner: Using promises and $q to handle asynchronous calls](http://chariotsolutions.com/blog/post/angularjs-corner-using-promises-q-handle-asynchronous-calls/)
 * [Xebia: Promises and Design Patterns in AngularJS](http://blog.xebia.com/2014/02/23/promises-and-design-patterns-in-angularjs/)
 * [AngularJS / UI Router / Resolve](http://www.jvandemo.com/how-to-resolve-angularjs-resources-with-ui-router/)
+# pledge
