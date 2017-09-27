@@ -108,7 +108,7 @@ describe('A promise instance', function(){
 
   describe('resolving', function(){
 
-    xit('changes the promise state to "fulfilled"', function(){
+    it('changes the promise state to "fulfilled"', function(){
 
       // Why not "resolved"? This will be covered in detail in Ch. 5, but
       // for now just know that strict P/A+ terminology draws a distinction
@@ -120,7 +120,7 @@ describe('A promise instance', function(){
       expect( promise._state ).toBe( 'fulfilled' );
     });
 
-    xit('can send data to the promise for storage', function(){
+    it('can send data to the promise for storage', function(){
       var someData = { name: 'Harry Potter' };
       promise._internalResolve( someData );
       expect( promise._value ).toBe( someData );
@@ -128,7 +128,7 @@ describe('A promise instance', function(){
 
     // Hint: use the pending status.
 
-    xit('does not affect an already-fulfilled promise', function(){
+    it('does not affect an already-fulfilled promise', function(){
       var data1 = { name: 'Harry Potter' };
       var data2 = { name: 'Gandalf' };
       promise._internalResolve( data1 );
@@ -136,7 +136,7 @@ describe('A promise instance', function(){
       expect( promise._value ).toBe( data1 );
     });
 
-    xit('works even with falsey values', function(){
+    it('works even with falsey values', function(){
       var data1; // undefined; could also work with null, 0, false, etc.
       var data2 = 'oops!';
       promise._internalResolve( data1 );
